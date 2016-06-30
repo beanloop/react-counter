@@ -34,10 +34,10 @@ var Counter = React.createClass({
       easing: nextProps.easing,
       start: Date.now(),
       stop: false
+    }, function() {
+      raf(this.animate);
+      this.draw();
     });
-
-    raf(this.animate);
-    this.draw();
   },
 
   draw: function() {
