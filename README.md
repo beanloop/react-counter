@@ -2,7 +2,7 @@
 
 A dead-simple incremental counter component with easing animations.
 
-    npm install react-counter
+    npm install @beanloop-ab/react-counter
 
 ```js
 var React = require('react');
