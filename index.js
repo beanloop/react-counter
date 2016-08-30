@@ -69,8 +69,12 @@ var Counter = React.createClass({
 
   render: function() {
     var value = this.props.formatFunc ? this.props.formatFunc(this.state.value) : Math.round(this.state.value);
-    return React.DOM.span({ className: 'counter' }, value);
+    return React.createElement(
+      'span',
+      { className: 'counter' },
+      value
+    );
   }
 });
 
-module.exports = Counter;
+module.exports.Counter = Counter;
