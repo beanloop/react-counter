@@ -2,7 +2,9 @@ var React = require('react');
 var raf = require('raf');
 var ease = require('ease-component');
 
-var Counter = React.createClass({
+
+var createClass = require('create-react-class');
+var Counter = createClass({
   getInitialState: function() {
     return {
       value: this.props.begin,
@@ -11,12 +13,18 @@ var Counter = React.createClass({
       end: this.props.end,
       easing: this.props.easing,
       start:  Date.now(),
-      stop: false
+      stop: false,
+      mounted: false
     };
   },
 
   componentDidMount: function() {
+    this.mounted = true;
     raf(this.animate);
+  },
+
+  componentWillUnmount: function() {
+    this.mounted = false;
   },
 
   animate: function() {
@@ -41,7 +49,7 @@ var Counter = React.createClass({
   },
 
   draw: function() {
-    if (!this.isMounted()) return;
+    if (!this.mounted) return;
 
     var time = this.state.time;
     var begin = this.state.begin;
