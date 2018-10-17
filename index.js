@@ -14,7 +14,7 @@ var Counter = createClass({
       easing: this.props.easing,
       start:  Date.now(),
       stop: false,
-      mounted: false
+      isMounted: false
     };
   },
 
