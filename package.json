@@ -1,6 +1,6 @@
 {
   "name": "@beanloop-ab/react-counter",
-  "version": "1.2.0",
+  "version": "2.0.1",
   "description": "Simple incremental counter with easings",
   "main": "index.js",
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/saebekassebil/react-counter",
   "dependencies": {
+    "create-react-class": "^15.6.3",
     "ease-component": "^1.0.0",
     "raf": "^2.0.4"
   },
