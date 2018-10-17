@@ -19,7 +19,7 @@ var Counter = createClass({
   },
 
   componentDidMount: function() {
-    this.mounted = true;
+    this.isMounted = true;
     raf(this.animate);
   },
 
