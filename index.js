@@ -49,7 +49,7 @@ var Counter = createClass({
   },
 
   draw: function() {
-    if (!this.mounted) return;
+    if (!this.isMounted) return;
 
     var time = this.state.time;
     var begin = this.state.begin;
