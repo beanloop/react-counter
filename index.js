@@ -24,7 +24,7 @@ var Counter = createClass({
   },
 
   componentWillUnmount: function() {
-    this.mounted = false;
+    this.isMounted = false;
   },
 
   animate: function() {
