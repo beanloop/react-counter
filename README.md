@@ -1,29 +1,42 @@
 # react-counter
 
-A dead-simple incremental counter component with easing animations.
+>
 
-    npm install @beanloop-ab/react-counter
+[![NPM](https://img.shields.io/npm/v/react-counter.svg)](https://www.npmjs.com/package/react-counter) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-```js
-var React = require('react');
-var Counter = require('react-counter');
+## Install
 
-React.render(
-  <Counter begin={0} end={1000} time={2000} easing="outCube" />,
-  document.body
-);
+```bash
+npm install --save @beanloop-ab/react-counter
 ```
 
 ## Usage
 
-```js
-<Counter
-  begin={Number}  // The number to count from
-  end={Number}    // The number to count to
-  time={Number}   // The time (in ms) the counting animation should take
-  easing={String} // Which easing function to use (default="outCube")
-  />
+```tsx
+import * as React from 'react'
+
+import {Counter} from 'react-counter'
+
+class Example extends React.Component {
+  render() {
+    return (
+      <div>
+        <Counter from={500} to={1600} duration={2000} />
+        <Counter to={1000} duration={2000} easing={n => n * n} />
+        <Counter to={1000} duration={2000} easing={n => n} />
+        <Counter to={1000}>
+          {value => (
+            <p style={{color: 'red'}}>
+              {value} custom formatting with render prop
+            </p>
+          )}
+        </Counter>
+      </div>
+    )
+  }
+}
 ```
 
-The `easing` property, can be a name of any easing function from
-[ease-component](https://www.npmjs.com/package/ease-component)
+## License
+
+MIT © [Beanloop](https://github.com/beanloop-ab), [Jakob Miland](https://github.com/saebekassebil)
