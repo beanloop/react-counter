@@ -47,7 +47,7 @@ const easeOutCubic: Easing = n => --n * n * n + 1
 
 class Counter extends React.Component<Props, State> {
   public state = {
-    value: 0,
+    value: this.props.from || 0,
     start: Date.now(),
     isAnimating: true,
   }
@@ -63,6 +63,7 @@ class Counter extends React.Component<Props, State> {
       const duration = this.props.duration || 1000
       const easing = this.props.easing || easeOutCubic
 
+    
       if (now - start >= duration) {
         this.setState({isAnimating: false})
       }
